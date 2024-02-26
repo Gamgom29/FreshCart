@@ -1,0 +1,36 @@
+<section>
+    <div class="sm:mx-auto sm:w-full sm:max-w-sm mb-3">
+        <h2 class="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">Reset Your Password</h2>
+        </div>
+<form [formGroup]="changePassForm" class="max-w-sm mx-auto" (ngSubmit)="handleForm()">
+    <div class="mb-3">
+        <label for="email" class="block text-sm font-medium leading-6 text-gray-900">Email address</label>
+        <div class="mt-2">
+            <input #inputEmail formControlName="email" id="email" name="email" type="email" autocomplete="email" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+        </div>
+        <div *ngIf="changePassForm.get('email')?.errors && (changePassForm.get('email')?.touched || inputEmail.value.length > 0)">
+            <p *ngIf="changePassForm.get('email')?.getError('required')" class="mt-2 text-sm text-red-600 dark:text-red-500"><span class="font-medium">Oops!</span> email is required</p>
+            <p *ngIf="changePassForm.get('email')?.getError('email')" class="mt-2 text-sm text-red-600 dark:text-red-500"><span class="font-medium">Oops!</span> Enter a Valid Mail</p>
+        </div>
+        </div>
+
+        <div class="mb-3">
+        <div class="flex items-center justify-between">
+            <label for="password" class="block text-sm font-medium leading-6 text-gray-900">New Password</label>
+            <div class="text-sm">
+            
+            </div>
+        </div>
+        <div class="mt-2">
+        <input #inputPass formControlName="newPassword" id="newPassword" name="newPassword" type="password" autocomplete="current-password" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+        </div>
+        <div *ngIf="changePassForm.get('newPassword')?.errors && (changePassForm.get('newPassword')?.touched || inputPass.value.length > 0)">
+            <p *ngIf="changePassForm.get('newPassword')?.getError('required')" class="mt-2 text-sm text-red-600 dark:text-red-500"><span class="font-medium">Oops!</span> Password is required</p>
+            <p *ngIf="changePassForm.get('newPassword')?.getError('pattern')" class="mt-2 text-sm text-red-600 dark:text-red-500"><span class="font-medium">Oops!</span> Password must be atleast 6 charachters </p>
+        </div>
+        </div>
+    <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>
+    <p *ngIf="errMsg" class="text-center mt-2 text-sm text-red-600 dark:text-red-500"><span class="font-medium">Oops!</span> {{errMsg}} </p>
+</form>
+
+</section>

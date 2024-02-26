@@ -1,0 +1,15 @@
+<section class="w-3/4 mx-auto">
+    <h2 class="text-4xl font-semibold text-center">Orders</h2>
+    <div *ngFor="let order of orders" class="my-5 shadow-md p-3">
+        <div class="flex justify-between">
+        <h3 class="text-xl font-semibold">order id : {{order.id}}</h3>
+        <h3 class="text-xl font-semibold">Total Price : {{order.totalOrderPrice | currency:'EGP '}}</h3>
+        </div>
+        <div class="row mt-4 justify-center">
+            <div *ngFor="let product of order.cartItems" class="col-md-2">
+                <img [src]="product.product.imageCover" alt="" class="w-100">
+                <p class="text-center">{{product.product.title}}</p>
+            </div>
+        </div>
+    </div>
+</section>

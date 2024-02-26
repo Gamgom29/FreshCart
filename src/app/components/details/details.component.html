@@ -1,0 +1,33 @@
+<section>
+    <div class="row align-items-center justify-content-center g-3">
+        <div class="col-md-3">
+            <div class="text-center">
+                <owl-carousel-o [options]="customOptions">
+                    <ng-container *ngFor="let img of data.images">
+                    <ng-template carouselSlide [id]="data._id">
+                    <img [src]="img" [alt]="data.title" [title]="data.title" class="w-full">
+                    </ng-template>
+                </ng-container>
+                </owl-carousel-o>
+            </div>
+        </div>
+        <div class="col-md-9 ">
+            <h3 class="text-3xl font-semibold mb-3">{{data.title}}</h3>
+            <p class="text-sm text-gray-400 mb-3">{{data.description}}</p>
+            <h4 class="font-semibold">{{data.category?.name}}</h4>
+            <div class="d-flex justify-content-between mt-3 ">
+                <span class="font-semibold">{{data.price}} EGP</span>
+                <div>
+                    <i class="fas fa-star text-yellow-400"></i>
+                    <span>{{data.ratingsAverage}}</span>
+                </div>
+            </div>
+            <div class="mx-auto text-center">
+                <button (click)="addToCart(data._id)"  class="cart-btn w-3/4 text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 mb-2">Add To Cart</button>
+                <span *ngIf="!wishlist.includes(data._id)" class="cursor-pointer" (click)="addToWish(data._id)"><i class="fa-regular fa-heart ms-3 mb-2 text-2xl"></i></span>
+                <span *ngIf="wishlist.includes(data._id)" class="cursor-pointer" (click)="deletefromWish(data._id)"><i 
+                class="fas fa-heart text-red-600 ms-3 mb-2 text-2xl"></i></span>
+            </div>
+        </div>
+    </div>
+</section>

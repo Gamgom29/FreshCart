@@ -1,0 +1,13 @@
+<section class="w-3/4 mx-auto bg-gray-200 p-3 rounded-xl">
+    <h2 class="text-4xl font-semibold mb-3">Check Out Session</h2>
+    <form [formGroup]="orderForm" (ngSubmit)="handleForm()">
+        <label class="block my-2 text-lg" for="details">Details </label>
+        <input class="border-gray-300 rounded bg-gray-50 border w-full" id="details" type="text" formControlName="details">
+        <label class="block my-2 text-lg" for="phone">phone </label>
+        <input class="border-gray-300 rounded bg-gray-50 border w-full" id="phone" type="tel" formControlName="phone">
+        <label class="block my-2 text-lg" for="city">city </label>
+        <input class="border-gray-300 rounded bg-gray-50 border w-full" id="city" type="text" formControlName="city">
+        <button class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 mt-3">Check Out</button>
+
+    </form>
+</section>
