@@ -6,7 +6,7 @@
 
 # clone repository
 ```
-https://github.com/Gamgom29/FreshCart.git
+git clone https://github.com/Gamgom29/FreshCart.git
 ```
 
 # Install dependencies
