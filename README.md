@@ -20,4 +20,4 @@ ng s -o
 ```
 
  # live Demo
- https://gamgom29.github.io/Ecommerce/
+https://gamgom29.github.io/FreshCart/
