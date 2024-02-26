@@ -53,7 +53,6 @@ export class HomeComponent implements OnInit {
       })
   }
   addToCart(productId:string){
-    this.AddedToCart = true;
     this._CartService.addProductToCart(productId).subscribe({
       next:(response)=>{
         this._CartService.cartNumber.next(response.numOfCartItems);
@@ -65,7 +64,6 @@ export class HomeComponent implements OnInit {
         })
       }, 
       error:(err)=>{
-        this.AddedToCart = false;
         console.log(err);
       }
     })
