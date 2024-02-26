@@ -1,9 +1,9 @@
 <section class="w-3/4 mx-auto">
     <h2 class="text-4xl font-semibold text-center">Orders</h2>
-    <div *ngFor="let order of orders" class="my-5 shadow-md p-3">
+    <div *ngFor="let order of orders" class="my-5 shadow-xl p-5">
         <div class="flex justify-between">
-        <h3 class="text-xl font-semibold">order id : {{order.id}}</h3>
-        <h3 class="text-xl font-semibold">Total Price : {{order.totalOrderPrice | currency:'EGP '}}</h3>
+        <h3 class="text-xl font-semibold text-blue-500">order id : {{order.id}}</h3>
+        <h3 class="text-xl font-semibold text-blue-500">Total Price : {{order.totalOrderPrice | currency:'EGP '}}</h3>
         </div>
         <div class="row mt-4 justify-center">
             <div *ngFor="let product of order.cartItems" class="col-md-2">
