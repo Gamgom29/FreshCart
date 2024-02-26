@@ -9,7 +9,7 @@ export class CartService {
   constructor(private _HttpClient:HttpClient) { }
   cartNumber:BehaviorSubject<number>= new BehaviorSubject(0);
   baseUrl:string = "https://ecommerce.routemisr.com/api/v1/";
-  gitHubLink:string = 'https://gamgom29.github.io/Ecommerce/'
+  gitHubLink:string = 'https://gamgom29.github.io/FreshCart/'
   addProductToCart(productId:string):Observable<any>{
     return this._HttpClient.post(`${this.baseUrl}cart` , 
     {productId:productId},
