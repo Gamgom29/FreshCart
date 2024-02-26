@@ -40,7 +40,7 @@
             </div>
             </div>
             <div class="flex items-center justify-center">
-                <button [disabled]="AddedToCart" (click)="addToCart(item._id)"  class="cart-btn  text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 mb-2">Add To Cart</button>
+                <button (click)="addToCart(item._id)"  class="cart-btn  text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 mb-2">Add To Cart</button>
                 <span *ngIf="!wishlist.includes(item._id)" class="cursor-pointer" (click)="addToWish(item._id)"><i class="fa-regular fa-heart ms-3 mb-2 text-2xl"></i></span>
                 <span *ngIf="wishlist.includes(item._id)" class="cursor-pointer" (click)="deletefromWish(item._id)"><i 
                 class="fas fa-heart text-red-600 ms-3 mb-2 text-2xl"></i></span>
